@@ -1,0 +1,216 @@
+/* ==========================================================
+   Cartão profissional: Enzo Zimbrão
+   Estrutura: tokens > base > componentes > telas maiores
+   ========================================================== */
+
+/* ---------- 1. Tokens (cores, fontes, medidas) ---------- */
+:root {
+  --fundo: #e6e8eb;
+  --cartao: #ffffff;
+  --tinta: #101418;
+  --suave: #4a5360;
+  --linha: #ffffff;
+  --destaque: #002fff;
+  --destaque-forte: #1000f0;
+  --sobre-destaque: #fdfdfd; /* texto sobre o amarelo: sempre escuro */
+  --foco: #1d4ed8;
+
+  --raio: 6px;
+  --fonte-titulo: "Bricolage Grotesque", system-ui, sans-serif;
+  --fonte-texto: "Public Sans", system-ui, sans-serif;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #0b0d10;
+    --cartao: #14181d;
+    --tinta: #f2f4f6;
+    --suave: #a3acb8;
+    --linha: #343b44;
+    --foco: #0011ff;
+  }
+}
+
+/* ---------- 2. Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 3px;
+}
+
+/* ---------- 3. Cartão ---------- */
+.cartao {
+  width: 100%;
+  max-width: 34rem;
+  padding: clamp(1.25rem, 5vw, 2rem);
+  background: var(--cartao);
+  border: 2px solid var(--linha);
+  border-radius: var(--raio);
+}
+
+/* Topo: avatar + identificação */
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.avatar {
+  flex: none;
+  width: 5.5rem;
+  height: 5.5rem;
+  display: grid;
+  place-items: center;
+  background: var(--destaque);
+  color: var(--sobre-destaque);
+  border-radius: var(--raio);
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Se você trocar a div por <img class="avatar">, esta regra cuida do corte */
+img.avatar {
+  object-fit: cover;
+  background: var(--destaque);
+}
+
+.nome {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.6rem, 6vw, 2.25rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.cargo {
+  margin: 0.35rem 0 0;
+  font-weight: 600;
+}
+
+.local {
+  margin: 0.15rem 0 0;
+  color: var(--suave);
+  font-size: 0.9375rem;
+}
+
+/* Bio e tecnologias */
+.bio {
+  max-width: 60ch;
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.skills li {
+  padding: 0.25rem 0.7rem;
+  border: 1.5px solid var(--linha);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Botão principal */
+.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 3rem;
+  margin-bottom: 1.5rem;
+  background: var(--destaque);
+  color: var(--sobre-destaque);
+  border: 2px solid var(--sobre-destaque);
+  border-radius: var(--raio);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+
+.botao:hover { background: var(--destaque-forte); }
+.botao:active { transform: translateY(1px); }
+
+/* Lista de links */
+.links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1.5px solid var(--linha);
+}
+
+.links a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-height: 3.5rem;
+  padding: 0.85rem 0;
+  border-bottom: 1.5px solid var(--linha);
+  color: inherit;
+  text-decoration: none;
+  transition: padding-left 0.15s, box-shadow 0.15s;
+}
+
+.links a:hover {
+  padding-left: 0.9rem;
+  box-shadow: inset 0.3rem 0 0 var(--destaque);
+}
+
+.links__rotulo {
+  color: var(--suave);
+  font-size: 0.8125rem;
+}
+
+.links__valor {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* Rodapé */
+.rodape {
+  margin-top: 1.5rem;
+  color: var(--suave);
+  font-size: 0.8125rem;
+}
+
+.rodape p { margin: 0; }
+
+/* ---------- 4. Telas maiores (mobile-first) ---------- */
+@media (min-width: 36rem) {
+  .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+  }
+}
+
+/* ---------- 5. Preferências de acessibilidade ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
