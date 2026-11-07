@@ -42,34 +42,6 @@ Meu cartão de visita digital: uma página única, responsiva e acessível, com 
 └── README.md
 ```
 
-## Como rodar no seu computador
-
-1. Baixe ou clone o repositório.
-2. Abra a pasta no VS Code e use a extensão **Live Server** ("Go Live"), ou abra o `index.html` direto no navegador.
-
-## Como personalizar
-
-Procure por `TODO` em `index.html` (Ctrl+F) e ajuste:
-
-- cargo, bio e tecnologias
-- links de LinkedIn, e-mail e WhatsApp
-- os mesmos dados no `contato.vcf`
-- foto de perfil, se quiser (instruções no comentário do HTML)
-- `og:url` e `og:image`, depois que o site estiver publicado
-
-## Como publicar
-
-O projeto é estático, então qualquer hospedagem de arquivos serve. No GitHub Pages:
-**Settings → Pages → Deploy from a branch → `main` / `(root)` → Save.**
-
-## O que aprendi
-
-<!-- TODO: escreva com suas palavras 3 ou 4 aprendizados reais. Por exemplo:
-     - o que mudou no seu jeito de pensar tamanhos com box-sizing
-     - quando você escolheu Flexbox e quando escolheu Grid
-     - como testou o layout em telas diferentes
-     - o que ainda quer melhorar -->
-
 ## Próximos passos
 
 - [ ] Ícones nos links (SVG inline)
