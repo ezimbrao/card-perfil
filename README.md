@@ -2,7 +2,7 @@
 
 Meu cartão de visita digital: uma página única, responsiva e acessível, com os links para meus perfis e um botão que salva meu contato direto na agenda do celular.
 
-**Ver online:** [COLE AQUI O LINK DO GITHUB PAGES]
+**Ver online:** https://ezimbrao.github.io/card-perfil/
 
 <!-- TODO: tire um print do cartão já com seus dados reais, salve como preview.png
      na raiz do projeto e confira se a imagem aparece abaixo. -->
